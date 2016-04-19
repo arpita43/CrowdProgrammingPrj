@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/mturk.js"></script>
+
+<body>
+
+<h2>Add the venue, date and time of the event !!!</h2>
+</br>
+<img src="http://imgur.com/CAdX2Nh.jpg" alt="Poster Image" style="width:700px;height:650px;">
+</br>
+</br>
+</br>
+
+Enter the following details !!
+</br>
+</br>
+
+<form id = "mturk_form" name = "mturk" action = "https://requestersandbox.mturk.com/mturk/externalSubmit" method = "POST">
+Suggested Event Title: <input type = "text" name = "title" >
+</br>
+</br>
+  Date: <input type="date" name="date" style = "left: 1000px;">
+<br>
+</br>
+  Time: <input type="time" name="time">
+<br>
+</br>
+  Venue: <input type="text"  name = "venue">
+<br>
+</br>
+  Additional Details (Links, Contact Details): 
+</br>
+<input type = "text" name = "details" style = "width: 300px;">
+</br>
+</br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
