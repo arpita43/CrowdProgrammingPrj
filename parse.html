@@ -43,7 +43,8 @@
     var query = new Parse.Query("Photo");
     query.find({
     success: function(results) {
-      alert("retrieved")
+      alert("retrieved results")
+      console.log("retrieved results")
       for(var i in results){
 	var photoLink = results[i].get("uploadedPhoto")['_url']
 	Download(photoLink)
