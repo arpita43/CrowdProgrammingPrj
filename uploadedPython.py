@@ -7,12 +7,12 @@ fileName = "hit.html"
 ######  CONFIGURATION PARAMETRS  ######
 
 SANDBOX = True  # Select whether to post to the sandbox (using fake money), or live MTurk site (using REAL money)
-HIT_URL = "https://arpita43.github.io/Arpita_Projects2/"+fileName  # Provide the URL that you want workers to sent sent to complete you task
+HIT_URL = "https://arpita43.github.io/CrowdProgrammingPrj/hit.html"  # Provide the URL that you want workers to sent sent to complete you task
 
 NUMBER_OF_HITS = 1  # Number of different HITs posted for this task
 NUMBER_OF_ASSIGNMENTS = 10  # Number of tasks that DIFFERENT workers will be able to take for each HIT
 LIFETIME = 60 * 60 * 24 * 2  # How long that the task will stay visible if not taken by a worker (in seconds)
-REWARD = 0.10  # Base payment value for completing the task (in dollars)
+REWARD = 0.05  # Base payment value for completing the task (in dollars)
 DURATION = 60*10  # How long the worker will be able to work on a single task (in seconds)
 APPROVAL_DELAY = 60*60*10  # How long after the task is completed will the worker be automatically paid if not manually approved (in seconds)
 
@@ -22,13 +22,13 @@ TITLE = 'Enter the event details from the poster'
 # Description of the HIT that workers will see when deciding to accept it or not
 DESCRIPTION = 'Enter the event details from the poster'
 # Search terms for the HIT posting
-KEYWORDS = ['Event', 'Poster', 'Mechanical Turk','Venue','Date', 'Time']
+KEYWORDS = ['Event', 'Poster', 'Mechanical Turk','Venue','Date', 'Time', 'Detail']
 
 
 # Your Amazon Web Services Access Key (private)
-AWS_ACCESS_KEY = 'abc' # <-- TODO: Enter your access key here
+AWS_ACCESS_KEY = 'xx' # <-- TODO: Enter your access key here
 # Your Amazon Web Services Secret Key (private)
-AWS_SECRET_KEY = 'def' # <-- TODO: Enter your private key here
+AWS_SECRET_KEY = 'yy' # <-- TODO: Enter your private key here
 
 #######################################
 
@@ -68,48 +68,40 @@ def makeHTMLPage():
 	f.write(addNewLine())
 	f.write("<h2>Add the venue, date and time of the event !!!</h2>")
 	f.write(addBreak())
-	f.write(addNewLine())
-	f.write("<img src='http://files.parsetfss.com/4c3c3a6d-2ad1-4d8f-96c4-0ad359da6c2c/tfss-866b8304-3ad6-467e-93ec-8d1b85a826da-image.png' alt='Poster Image' style='width:304px;height:228px;'>")
-	f.write(addNewLine())
+	f.write("<img src='http://i.imgur.com/PrIuXhg.jpg?1.jpg' alt='Poster Image' style='width:700px;height:650px;'>")
 	f.write(addBreak())
 	f.write(addBreak())
 	f.write(addBreak())
 	f.write("Enter the following details !!")
-	f.write(addNewLine())
+	f.write(addBreak())
+	f.write(addBreak())
+	f.write("Suggested Event Title: <input type = 'text' name = 'title' >")
 	f.write(addBreak())
 	f.write(addBreak())
 	f.write("<form id = 'mturk_form' name = 'mturk' action = 'https://requestersandbox.mturk.com/mturk/externalSubmit' method = 'POST'>")
-	f.write(addNewLine())
 	f.write("Date: <input type='date' name='date' style = 'left: 1000px;'>")
-	f.write(addNewLine())
 	f.write(addBreak())
 	f.write(addBreak())
 	f.write("Time: <input type='time' name='time'>")
-	f.write(addNewLine())
 	f.write(addBreak())
 	f.write(addBreak())
 	f.write("Venue: <input type='text'  name = 'venue'>")
-	f.write(addNewLine())
 	f.write(addBreak())
 	f.write(addBreak())
 	f.write("Additional Details (Links, Contact Details): </br> <input type = 'text' name = 'details' style = 'width: 300px;'> ")
-	f.write(addNewLine())
 	f.write(addBreak())
 	f.write(addBreak())
 	f.write("<input type='submit' value='Submit'>")
-	f.write(addNewLine())
 	f.write("</form>")
-	f.write(addNewLine())
 	f.write("</body>")
-	f.write(addNewLine())
 	f.write("</html>")
-	f.write(addNewLine())
 	f.close()
 
 def useGithub():
 	#script to use github by python
+	#os.chdir("github_repo")
 	os.system("git init")
-	os.system("git add "+fileName)
+	os.system("git add hit.html")
 	os.system("git commit -m 'adding hit.html'")
 	os.system("git push --set-upstream origin gh-pages")
 
